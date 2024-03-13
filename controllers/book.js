@@ -1,5 +1,6 @@
 const { getAllBooks, getBookById, insertBook, modifyBook, deleteBookById } = require('../services/book');
 const { isValidId } = require('../utils/utils');
+const errors = require('../errors/errors');
 
 function getBooks(req, res) {
     try {
@@ -20,7 +21,7 @@ function getBook(req, res) {
             res.send(book);
         } else {
             res.status(422);
-            res.send('Invalid id')
+            res.send(errors.INVALID_BOOK_ID);
         }
     } catch (error) {
         res.status(500);
@@ -29,16 +30,14 @@ function getBook(req, res) {
 }
  
 function postBook(req, res) {
-    const id = req.params.id;
-
     try {
-        if (isValidId(id)) {
-            const insertedBook = insertBook(req.body);
+        if (isValidId(req.params.id) && req.body.name) {
+            insertBook(req.body);
             res.status(201);
-            res.send(insertedBook);
+            res.send(errors.SUCESS_BOOK_INSERT);
         } else {
             res.status(422);
-            res.send('Invalid id')
+            res.send(errors.INVALID_BOOK_ID)
         }
     } catch (error) {
         res.status(500);
@@ -55,7 +54,7 @@ function patchBook(req, res) {
             res.send(books);
         } else {
             res.status(422);
-            res.send('Invalid id')
+            res.send(errors.INVALID_BOOK_ID);
         }
     } catch (error) {
         res.status(500);
@@ -73,7 +72,7 @@ function deleteBook(req, res) {
             res.send({id});
         } else {
             res.status(422);
-            res.send('Invalid id')
+            res.send(errors.INVALID_BOOK_ID);
         }
     } catch (error) {
         res.status(500);
