@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { getBooks, getBook, postBook, patchBook, deleteBook } = require('../controller/book');
+const { getBooks, getBook, postBook, patchBook, deleteBook } = require('../controllers/book');
 const router = Router();
 
 router.get('/', getBooks); //get all books
