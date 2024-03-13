@@ -3,8 +3,9 @@ const routeBooks = require('./routes/book')
 const app = express();
 const port = 8000;
 
-app.use('/books', routeBooks)
+app.use(express.json());
+app.use('/books', routeBooks);
 
 app.listen(port, () => {
-    console.log(`Escutando a porta ${port}`)
+    console.log(`Server started on port ${port}`)
 });
