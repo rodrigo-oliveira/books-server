@@ -1,6 +1,6 @@
 const { getAllBooks, getBookById, insertBook, modifyBook, deleteBookById } = require('../services/book');
 const { isValidId } = require('../utils/utils');
-const errors = require('../errors/errors');
+const { errorMessages, successMessages } = require('../config/messages');
 
 function getBooks(req, res) {
     try {
@@ -34,10 +34,10 @@ function postBook(req, res) {
         if (isValidId(req.params.id) && req.body.name) {
             insertBook(req.body);
             res.status(201);
-            res.send(errors.SUCESS_BOOK_INSERT);
+            res.send(successMessages.SUCESS_BOOK_INSERT);
         } else {
             res.status(422);
-            res.send(errors.INVALID_BOOK_ID)
+            res.send(errorMessages.INVALID_BOOK_ID)
         }
     } catch (error) {
         res.status(500);
@@ -54,7 +54,7 @@ function patchBook(req, res) {
             res.send(books);
         } else {
             res.status(422);
-            res.send(errors.INVALID_BOOK_ID);
+            res.send(errorMessages.INVALID_BOOK_ID);
         }
     } catch (error) {
         res.status(500);
@@ -72,7 +72,7 @@ function deleteBook(req, res) {
             res.send({id});
         } else {
             res.status(422);
-            res.send(errors.INVALID_BOOK_ID);
+            res.send(errorMessages.INVALID_BOOK_ID);
         }
     } catch (error) {
         res.status(500);

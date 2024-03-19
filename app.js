@@ -1,9 +1,11 @@
 const express = require('express');
-const routeBooks = require('./routes/book')
+const routeBooks = require('./routes/book');
+const cors = require('cors');
 const app = express();
 const port = 8000;
 
 app.use(express.json());
+app.use(cors({}));
 app.use('/books', routeBooks);
 
 app.listen(port, () => {
