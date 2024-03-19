@@ -6,7 +6,7 @@ const port = 8000;
 
 app.use(express.json());
 app.use(cors({}));
-app.use('/books', routeBooks);
+app.use('/livros', routeBooks);
 
 app.listen(port, () => {
     console.log(`Server started on port ${port}`)
