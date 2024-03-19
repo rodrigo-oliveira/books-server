@@ -2,15 +2,15 @@
 	"info": {
 		"_postman_id": "c941546b-0739-4782-9a5c-81600b5dc1a8",
 		"name": "Books",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1740145"
 	},
 	"item": [
 		{
 			"name": "get all books",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": []
 			},
 			"response": []
 		},
@@ -18,8 +18,7 @@
 			"name": "get books by Id",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": []
 			},
 			"response": []
 		},
@@ -27,8 +26,7 @@
 			"name": "insert new book",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": []
 			},
 			"response": []
 		},
@@ -36,8 +34,7 @@
 			"name": "patch book",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": []
 			},
 			"response": []
 		},
@@ -45,8 +42,31 @@
 			"name": "delete book",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get all favorite books",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "insert new favorite book",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete favorite book",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
