@@ -1,6 +1,6 @@
 const fs = require('fs');
-const booksFile = 'books.json';
-const favoriteBooksFile = 'favoriteBooks.json';
+const booksFile = './data/books.json';
+const favoriteBooksFile = './data/favoriteBooks.json';
 
 function getAllFavoriteBooks() {
     return JSON.parse(fs.readFileSync(favoriteBooksFile));

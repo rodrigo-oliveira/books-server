@@ -1,5 +1,5 @@
 const fs = require('fs');
-const booksFile = 'books.json';
+const booksFile = './data/books.json';
 
 function getAllBooks() {
     return JSON.parse(fs.readFileSync(booksFile));

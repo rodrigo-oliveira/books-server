@@ -3,6 +3,18 @@ const { isValidId } = require('../utils/utils');
 const { errorMessages, successMessages } = require('../config/messages');
 
 function getBooks(req, res) {
+    /* #swagger.responses[200] = {
+            description: "Get all books",
+            content: {
+                "application/json": {
+                    schema:{
+                        $ref: "#/components/schemas/Books"
+                    }
+                }           
+            }
+        }   
+    */
+
     try {
         const books = getAllBooks();
         res.send(books);
@@ -13,6 +25,18 @@ function getBooks(req, res) {
 }
 
 function getBook(req, res) {
+    /* #swagger.responses[200] = {
+            description: "Get book by id",
+            content: {
+                "application/json": {
+                    schema:{
+                        $ref: "#/components/schemas/Book"
+                    }
+                }           
+            }
+        }   
+    */
+
     try {
         const id = req.params.id;
 
@@ -30,6 +54,18 @@ function getBook(req, res) {
 }
  
 function postBook(req, res) {
+    /*  #swagger.requestBody = {
+            required: true,
+            content: {
+                "application/json": {
+                    schema: {
+                        $ref: "#/components/schemas/Book"
+                    }  
+                }
+            }
+        } 
+    */
+
     try {
         if (req.body.name) {
             insertBook(req.body);
@@ -46,6 +82,18 @@ function postBook(req, res) {
 }
 
 function patchBook(req, res) {
+    /*  #swagger.requestBody = {
+            required: true,
+            content: {
+                "application/json": {
+                    schema: {
+                        $ref: "#/components/schemas/Book"
+                    }  
+                }
+            }
+        } 
+    */
+
     const id = req.params.id;
 
     try {

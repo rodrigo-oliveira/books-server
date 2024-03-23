@@ -3,6 +3,18 @@ const { successMessages, errorMessages } = require('../config/messages');
 const { isValidId } = require('../utils/utils');
 
 function getFavoriteBooks(req, res) {
+    /* #swagger.responses[200] = {
+            description: "Get favorite books",
+            content: {
+                "application/json": {
+                    schema:{
+                        $ref: "#/components/schemas/FavoriteBooks"
+                    }
+                }           
+            }
+        }   
+    */
+
     try {
         const books = getAllFavoriteBooks();
         res.send(books);
