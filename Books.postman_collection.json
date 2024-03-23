@@ -18,31 +18,95 @@
 			"name": "get books by Id",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/books/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "insert new book",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"123\",\n    \"name\": \"Novo Livro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/books",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "patch book",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/books/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "delete book",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/books/123",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"books",
+						"123"
+					]
+				}
 			},
 			"response": []
 		},
@@ -50,25 +114,83 @@
 			"name": "get all favorite books",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/favorites",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"favorites"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "insert new favorite book",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/favorites/4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"favorites",
+						"4"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "delete favorite book",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/favorites/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"favorites",
+						"1"
+					]
+				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
 		}
 	]
 }

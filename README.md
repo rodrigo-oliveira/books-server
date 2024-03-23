@@ -10,6 +10,13 @@ In the project directory, you can run:
 
 Start the server: http://localhost:8000
 
+Swagger API Documentation: http://localhost:8000/swagger
+
+### `npm swagger`
+
+Generate swagger-output file
+
+
 ## Using Postman Collection
 
 To test and explore the endpoints of this API, you can import the provided collection in the repository. 
